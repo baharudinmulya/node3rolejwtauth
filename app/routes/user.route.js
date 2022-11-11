@@ -25,6 +25,12 @@ module.exports = function(app) {
   );
 
   app.get(
+    "/profile/me",
+    // [authJwt.verifyToken, authJwt.isUser],
+    controller.profileUser
+  );
+
+  app.get(
     "/api/test/admin",
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
